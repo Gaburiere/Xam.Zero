@@ -1,5 +1,5 @@
-﻿using DryIoc;
-using Xam.Zero.DryIoc;
+﻿using Autofac;
+using Xam.Zero.Autofac;
 using Xam.Zero.SimpleTabbedApp.Shells;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,7 +10,7 @@ namespace Xam.Zero.SimpleTabbedApp
 {
     public partial class App : Application
     {
-        public static readonly Container Container = new Container();
+        public static readonly ContainerBuilder Container = new ContainerBuilder();
 
         public App()
         {
@@ -18,10 +18,11 @@ namespace Xam.Zero.SimpleTabbedApp
             
             ZeroApp
                 .On(this)
-                .WithContainer(DryIocZeroContainer.Build(Container))
+                .WithContainer(AutofacZeroContainer.Build(Container))
                 .RegisterShell(() => new SimpleShell())
                 .RegisterShell(() => new TabbedShell())
                 .StartWith<SimpleShell>();
+
         }
 
         protected override void OnStart()

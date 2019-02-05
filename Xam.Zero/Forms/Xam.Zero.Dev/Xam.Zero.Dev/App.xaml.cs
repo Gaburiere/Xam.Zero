@@ -21,7 +21,7 @@ namespace Xam.Zero.Dev
             this.InitializeComponent();
 
             ZeroApp.On(this)
-                .WithContainer(TinyIocZeroContainer.Build())
+                .WithContainer(DryIocZeroContainer.Build(Container))
                 .RegisterShell(() => new AppShell())
                 .RegisterShell(() => new TabbedShell())
                 .StartWith<AppShell>();

@@ -10,6 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Xam.Zero.Autofac\Xam.Zero.Autofac.csproj" />
       <ProjectReference Include="..\..\Xam.Zero.DryIoc\Xam.Zero.DryIoc.csproj" />
       <ProjectReference Include="..\..\Xam.Zero\Xam.Zero.csproj" />
     </ItemGroup>
@@ -48,6 +49,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Autofac" Version="4.8.1" />
       <PackageReference Include="Xamarin.Forms" Version="4.0.0.94569-pre3" />
     </ItemGroup>
 </Project>
